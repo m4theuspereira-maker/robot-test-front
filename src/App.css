@@ -1,38 +1,92 @@
 .App {
   text-align: center;
+  max-width: 375px;
+  margin: 0 auto;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.grid {
+  display: grid;
+  max-width: 375px;
+  border: 1px solid #ccc;
+  grid-template-columns: repeat(5, 1fr);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.item {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 65px;
+  margin: 5px;
+  background: rgb(251, 29, 9);
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-size: 1.5em;
 }
 
-.App-link {
-  color: #61dafb;
+.robot {
+  width: 0;
+  height: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.robot-direction-NORTH {
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #303030;
+}
+
+.robot-direction-SOUTH {
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #303030;
+}
+
+.robot-direction-EAST {
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #303030;
+}
+
+.robot-direction-WEST {
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #303030;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: 'row';
+  margin-top: 20px
+}
+
+.button {
+  background-color: #222;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 4px 20px 3px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  margin: 0 10px;
+}
+
+.button:hover,
+.button:focus {
+  opacity: 0.75;
 }
